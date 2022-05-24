@@ -15,12 +15,13 @@
          <img src= <%= product.images[0] %> >   
 
             <li>
-                <%= product.title %>
-                <%= product.description %>
-                <%= product.price %>
-                <%= product.rating %>
-                <%= product.brand %>
-                <%= product.category %>
+               <h3> <%= product.title %> </h3> 
+                
+                Description: <%= product.description %> <br>
+                Cost: $<%= product.price %> <br>
+                Rating: <%= product.rating %> <br>
+                Brand: <%= product.brand %> <br>
+                Category: <%= product.category %> 
 
             </li>
         <% }) %>

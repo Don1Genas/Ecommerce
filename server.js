@@ -3,6 +3,7 @@ const express = require('express');
 
 // import the controller
 const getData = require('./Controllers/getData');
+const products = require('./Models/products');
 
 // Call the get data
 const productsData = getData();
@@ -47,7 +48,9 @@ app.get('/products/new', (req, res) => {
 
 app.get('/products/:id', (req, res) => {
     console.log(req.params);
-    res.send(productsData[req.params.id])
+    const result = products.filter(item => item.id === Number(req.params.id))
+    
+    res.render('productId', {product: result[0]})
 })
 
 //Create new products
